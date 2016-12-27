@@ -1,0 +1,2 @@
+app  config	db	    Gemfile	  lib  public	 README.rdoc  tmp
+bin  config.ru	delete.txt  Gemfile.lock  log  Rakefile  test	      vendor
