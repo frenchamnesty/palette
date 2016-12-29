@@ -25,6 +25,15 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+<div class="search">
+<% form_tag request.path, :method => 'get' do %>
+  <% content_tag :label do %>
+    Search term:
+    <%= text_field_tag :search, params[:search] %>
+  <% end %>
+<% end %>
+</div> 
+
 </head>
 <body>
 
@@ -38,7 +47,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Palette</a>
+      <a class="navbar-brand" href="/">Palette</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -55,13 +64,36 @@
 
 
 <%= yield %>
+    
+<div class="clear"></div>
+  
 
-<br clear="all"/>
 
-<% will_paginate @places %>
-  <% @places.each do |post| %>
-  <% end %> 
-<%= will_paginate @places %>
+<div class= "pagination">
+  <div class="page-text">
+      <%= link_to 'First << ', :action => 'index', :page => 1 %>
+      <span class="previous_page disabled">Previous - </span>
+      <a class="current"> 1 </a>
+      <a rel="next" href="/places?page=2">2</a>
+      <a href="/places?=page=3">3</a>
+      <a href="/places?=page=4">4</a>
+      <a class="next_page" rel="next" href="/places?page=2"> - Next</a>
+      <%= link_to ' >> Last', :action => 'index', :page => @places.last%>
+    </div>
+</div>
+
+<div class="footer">
+
+    <div class="col-xs-12" class="footer">
+      <h3>CONTACT</h3>
+      <hr class='line'/>
+      <br />
+      Developed by <a href="http://kathleenfrench.co">Kathleen French</a>
+      <br />
+      Email - <a href="mailto:kfrench09@gmail.com" target="_blank">here</a>
+    </div>
+
+</div>
 
 
 
