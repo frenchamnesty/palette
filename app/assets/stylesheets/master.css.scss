@@ -23,7 +23,14 @@
 
 }
 
-h1, h2, h3, h4 {
+h1 {
+  font-family: "Amatica SC", cursive;
+  margin: 0;
+  text-align: left;
+  padding: 5px;
+}
+
+h2, h3, h4 {
   margin:0;
   padding:5px;
   font-family: "Amatica SC", cursive;
@@ -105,19 +112,24 @@ body {
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .btn-sharp {
   border-radius: 0;
   font-weight: 600;
   font-style: bold;
-  margin-left: 225px;
   font-family: "Amatica SC", cursive;
   font-size: 25px;
+  position: relative;
+  width: 100px;
 }
 
 .input {
-  margin-left: 8px;
   width: 500px;
+  text-align: left;
+ 
 }
+
+
 
