@@ -53,7 +53,17 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
 <%= yield %>
+
+<br clear="all"/>
+
+<% will_paginate @places %>
+  <% @places.each do |post| %>
+  <% end %> 
+<%= will_paginate @places %>
+
+
 
 </body>
 </html>
