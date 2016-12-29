@@ -48,12 +48,18 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">Palette</a>
+      <% link_to 'Palette', root_path, class: 'navbar-brand' %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Link</a></li>
+        <li>
+          <%= link_to new_place_path do %>
+          New Place
+          <i style="font-size:0.75em;" class="glyphicon glyphicon-plus-sign"></i>
+          <% end %>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
