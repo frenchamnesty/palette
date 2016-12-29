@@ -1,11 +1,15 @@
 
-<div class="booyah-box">
+<div class="booyah-box form">
   <h1>Enter Your Place Details</h1>
+    <div class="form-style">
     <%= simple_form_for @place do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.input :description %>
+      <%= f.input :name, :input_html => { :class => 'input' } %>
       <br />
-      <%= f.submit 'Create', class: 'btn btn-primary' %>
+      <%= f.input :address, :input_html => { :class => 'input' } %>
+      <br />
+      <%= f.input :description, :input_html => { :class => 'input' } %>
+      <br />
+      <%= f.submit 'Create', class: 'btn btn-sharp' %>
     <% end %>
+    </div>
 </div>
