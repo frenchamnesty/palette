@@ -71,15 +71,15 @@ body {
 .footer {
   text-align: center;
   font-family: 'Amiri', serif;
-  background:url('/assets/pink_rice.png');
-  cursor: default;
+  background: url('/assets/pink_rice.png');
   border: 1px solid #e5e5e5;
-  padding-bottom: 20px;
-  position: absolute;
+  position: relative;
   right: 0;
   left: 0;
   bottom: 0;
-  padding: 1rem;
+  padding-bottom: 10px;
+  padding-top: 5px;
+
 }
 
 .pagination {

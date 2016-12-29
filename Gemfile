@@ -8,6 +8,8 @@ gem 'kaminari', '~> 0.17.0'
 
 gem 'slim'
 
+gem 'simple_form'
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
