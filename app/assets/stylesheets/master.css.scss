@@ -132,13 +132,14 @@ body {
   width: 100px;
 }
 
-.login-page {
+.login-page, .signup-page {
   text-align: center;
 }
 
 .render {
   font-family: 'Amiri', serif;
   font-style: bold;
+  padding-top: 4px;
 }
 
 .field-set {
@@ -146,6 +147,21 @@ body {
   display: inline-block;
 }
 
+.form-inputs{
+    font-family: 'Amiri', serif;
+}
+
+
 input { width: 60%; overflow:hidden; box-sizing: border-box; position: relative; font-family: 'Amiri',serif}
 
 label {float: left; width: 20%; box-sizing: border-box; font-family: 'Amiri',serif; text-align:left; font-size:18px;}
+
+.hint {
+      box-sizing: border-box;
+      float:left;
+      padding-left: 40%;
+}
+
+abbr[title="required"] {
+  display: none;
+}
