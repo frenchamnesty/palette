@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sass-rails'
 
+gem ruby '2.2.6'
+
 gem 'will_paginate', '~> 3.1.0'
 gem 'kaminari', '~> 0.17.0'
 
