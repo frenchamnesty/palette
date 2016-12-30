@@ -132,6 +132,16 @@ body {
   width: 100px;
 }
 
+.btn-sharp-forgot {
+  border-radius: 0;
+  font-weight: 600;
+  font-style: bold;
+  font-family: "Amatica SC", cursive;
+  font-size: 25px;
+  position: relative;
+  width: relative;
+}
+
 .login-page, .signup-page {
   text-align: center;
 }
