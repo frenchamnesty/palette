@@ -7,6 +7,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'kaminari', '~> 0.17.0'
 
 gem 'slim'
+gem "geocoder", "1.3.4"
 
 gem 'simple_form'
 
