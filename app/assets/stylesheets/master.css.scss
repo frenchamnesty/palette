@@ -30,7 +30,14 @@ h1 {
   padding: 5px;
 }
 
-h2, h3, h4 {
+h2 {
+  font-size: 50px;
+  text-align: center;
+  font-family: "Amatica SC", cursive;
+
+}
+
+h3, h4 {
   margin:0;
   padding:5px;
   font-family: "Amatica SC", cursive;
@@ -125,11 +132,20 @@ body {
   width: 100px;
 }
 
-.input {
-  width: 500px;
-  text-align: left;
- 
+.login-page {
+  text-align: center;
 }
 
+.render {
+  font-family: 'Amiri', serif;
+  font-style: bold;
+}
 
+.field-set {
+  overflow: hidden;
+  display: inline-block;
+}
 
+input { width: 60%; overflow:hidden; box-sizing: border-box; position: relative; font-family: 'Amiri',serif}
+
+label {float: left; width: 20%; box-sizing: border-box; font-family: 'Amiri',serif; text-align:left; font-size:18px;}
