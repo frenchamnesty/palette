@@ -1,0 +1,15 @@
+
+<div class="booyah-box form">
+  <h1>Edit Entry</h1>
+    <div class="form-style">
+    <%= simple_form_for @place do |f| %>
+      <%= f.input :name, :input_html => { :class => 'input' } %>
+      <br />
+      <%= f.input :address, :input_html => { :class => 'input' } %>
+      <br />
+      <%= f.input :description, :input_html => { :class => 'input' } %>
+      <br />
+      <%= f.submit 'Update', class: 'btn btn-sharp' %>
+    <% end %>
+    </div>
+</div>

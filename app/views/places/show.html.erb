@@ -1,0 +1,22 @@
+
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+
+
+  <h1><%= @place.name %></h1>
+    <h5><%= @place.address %></h5><br/><br/>
+    <br/><br/>
+      <p><%= @place.description %></p><br/>
+        <% if @place.user.present? %>
+          <div class='email'>
+          <email><%= @place.user.email %></email>
+          </div>
+          <div class="pull-right">
+            <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-sharp' %>
+            </div>
+        <% end %>
+
+</div>
+
+
+
+
