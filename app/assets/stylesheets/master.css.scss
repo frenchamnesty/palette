@@ -161,6 +161,13 @@ body {
     font-family: 'Amiri', serif;
 }
 
+.input-description {
+    overflow: hidden;
+    width: 60%;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Amiri", serif;
+}
 
 input { width: 60%; overflow:hidden; box-sizing: border-box; position: relative; font-family: 'Amiri',serif}
 
@@ -171,10 +178,6 @@ label {float: left; width: 20%; box-sizing: border-box; font-family: 'Amiri',ser
       float:left;
       padding-left: 50%;
       padding-top: 4px;
-}
-
-.current {
-  position: center;
 }
 
 abbr[title="required"] {
