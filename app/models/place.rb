@@ -1,4 +1,5 @@
 class Place < ActiveRecord::Base
+  belongs_to :user
   self.per_page = 10
 
   def self.search(search, page)
