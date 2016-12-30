@@ -139,7 +139,7 @@ body {
   font-family: "Amatica SC", cursive;
   font-size: 25px;
   position: relative;
-  width: relative;
+  width: 350px
 }
 
 .login-page, .signup-page {
@@ -164,12 +164,13 @@ body {
 
 input { width: 60%; overflow:hidden; box-sizing: border-box; position: relative; font-family: 'Amiri',serif}
 
-label {float: left; width: 20%; box-sizing: border-box; font-family: 'Amiri',serif; text-align:left; font-size:18px;}
+label {float: left; width: 20%; box-sizing: border-box; font-family: 'Amiri',serif; text-align:left; font-size:16px}
 
 .hint {
       box-sizing: border-box;
       float:left;
-      padding-left: 40%;
+      padding-left: 50%;
+      padding-top: 4px;
 }
 
 abbr[title="required"] {
