@@ -13,7 +13,9 @@
     <% end %>
      <div class="pull-right">
             <br />
-            <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-sharp' %>
+            <% if current_user && current_user == @place.user %>
+            <%= link_to 'Remove', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-sharp'%>
+            <%end%>
             </div>
     </div>
 </div>
