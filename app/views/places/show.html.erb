@@ -3,8 +3,7 @@
 
 
   <h1><%= @place.name %></h1>
-  <h5><%= @place.address %></h5><br/><br/>
-  <br/><br/>
+  <h5><%= @place.address %></h5><br/>
 
   <% if @place.latitude.present? && @place.longitude.present? %>
 
@@ -12,9 +11,11 @@
     <script>
       function initMap() {
         // Styles a map in night mode.
+        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.674, lng: -73.945},
-          zoom: 12,
+          center: myLatLng,
+          zoom: 14,
           styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -96,9 +97,14 @@
             }
           ]
         });
+
+        var marker = new google.maps.Marker ({
+          position: myLatLng,
+          map: map,
+        });
       }
     </script>
-    
+
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARiezVR2lQ-UrD1d00e58KHsu91UmxGVw&callback=initMap"
     async defer></script>
 
