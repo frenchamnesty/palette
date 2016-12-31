@@ -15,7 +15,8 @@
 
         var map = new google.maps.Map(document.getElementById('map'), {
           center: myLatLng,
-          zoom: 14,
+          zoom: 15,
+          scrollwheel: false,
           styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
@@ -135,16 +136,12 @@
         <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-sharp'%>
       <%end%>
     </div>
-         <div class="pull-right">
-        <% if current_user && current_user == @place.user %>
-          <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-sharp'%>
-        <%end%>
-      </div>
 
     <br />
     <div class="clear"></div>
 
     <div class="comment-title"><h3> Leave a Comment </h3></div>
+    <br />
     <br />
 
   <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
@@ -162,24 +159,6 @@
 
   <% end %>
 
-  <br />
-  <br />
-
-  <div class="comment-show">
-    <% @place.comments.each do |comment| %>
-      <div>
-      <blockquote>
-        <% if comment.humanized_rating.present? %>
-          <b><%= comment.humanized_rating %></b>
-          <% end %>
-          <%= comment.message %>
-          <small><%= comment.user.email %></small>
-        </blockquote>
-      </div>
-    <% end %> 
-  </div>
-
-    <br />
     <br />
 
     <% @place.comments.each do |comment| %>
