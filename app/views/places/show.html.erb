@@ -6,21 +6,6 @@
   <h5><%= @place.address %></h5><br/><br/>
   <br/><br/>
 
-     
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 300px;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-
 
     <script>
       function initMap() {
@@ -40,6 +25,8 @@
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/apijs?key=AIzaSyARiezVR2lQ-UrD1d00e58KHsu91UmxGVw&callback=initMap"></script>
+
+    <div id="map"></div>
 
     <div class="description">
       <p><%= @place.description %></p><br/>
