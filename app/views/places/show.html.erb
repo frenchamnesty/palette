@@ -134,7 +134,7 @@
     <h3> Leave a Comment </h3>
     <br />
     <div class="comment-section" class="form-style">
-    <%= simple_form_for @comment, url: '#' do |f| %>
+    <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
         <div class="comment-message">
             <%= f.input :message %>
             <%= f.input :rating %>
