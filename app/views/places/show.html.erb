@@ -6,6 +6,7 @@
   <h5><%= @place.address %></h5><br/><br/>
   <br/><br/>
 
+  <% if @place.latitude.present? && @place.longitude.present? %>
 
     <script>
       function initMap() {
@@ -27,6 +28,7 @@
     <script async defer src="https://maps.googleapis.com/maps/apijs?key=AIzaSyARiezVR2lQ-UrD1d00e58KHsu91UmxGVw&callback=initMap"></script>
 
     <div id="map"></div>
+  <% end %>
 
     <div class="description">
       <p><%= @place.description %></p><br/>
