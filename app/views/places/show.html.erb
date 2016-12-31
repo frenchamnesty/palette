@@ -10,7 +10,11 @@
 
     <div style="height:300px; width: 300px; position: absolute"> 
     <script>
+
       function initMap() {
+        
+        var infowindow = new google.maps.InfoWindow();
+
         var myLatLng = {
             lat: <%= @place.latitude %>, 
             lng: <%= @place.longitude %>
@@ -22,20 +26,21 @@
             mapTypeId: google.maps.MapTypeId.HYBRID
           };
 
-        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: @place.name 
+          title: <%= @place.name %>
         });
+
       }
-      
+
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/apijs?key=AIzaSyARiezVR2lQ-UrD1d00e58KHsu91UmxGVw&callback=initMap"></script>
 
-    <div id="map_canvas"></div>
+    <div id="map"></div>
     </div>
 
   <% end %>
