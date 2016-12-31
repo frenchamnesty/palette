@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161230230112) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
   end
