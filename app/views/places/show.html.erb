@@ -123,6 +123,8 @@
         <% if @place.user.present? %>
             <div class='email'>
             <span style="font-weight:bold">by: </span>
+
+            <span style="font-weight:bold"> - </span>
             <email><%= @place.user.email %></email>
             </div>
         <% end %>
@@ -133,6 +135,11 @@
         <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-sharp'%>
       <%end%>
     </div>
+         <div class="pull-right">
+        <% if current_user && current_user == @place.user %>
+          <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-sharp'%>
+        <%end%>
+      </div>
 
     <br />
     <div class="clear"></div>
@@ -171,6 +178,21 @@
       </div>
     <% end %> 
   </div>
+
+    <br />
+    <br />
+
+    <% @place.comments.each do |comment| %>
+      <div class="show-comment">
+      <blockquote>
+        <% if comment.humanized_rating.present? %>
+          <b><%= comment.humanized_rating %></b> - 
+          <% end %>
+          <%= comment.message %>
+          <small><%= comment.user.email %></small>
+      </blockquote>
+      </div>
+    <% end %> 
 
 </div>
 
