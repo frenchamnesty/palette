@@ -44,8 +44,9 @@
     <div class="description">
       <p><%= @place.description %></p><br/>
         <% if @place.user.present? %>
-          <div class='email'>
-          <email><%= @place.user.email %></email>
+            <div class='email'>
+            <email><%= @place.user.email %></email>
+            </div>
         <% end %>
     </div>
 
