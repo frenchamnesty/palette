@@ -3,16 +3,10 @@
 
 
   <h1><%= @place.name %></h1>
-    <h5><%= @place.address %></h5><br/><br/>
-    <br/><br/>
-      <p><%= @place.description %></p><br/>
-        <% if @place.user.present? %>
-          <div class='email'>
-          <email><%= @place.user.email %></email>
-          </div>
-       <% end %>
+  <h5><%= @place.address %></h5><br/><br/>
+  <br/><br/>
 
-
+     
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -30,7 +24,7 @@
 
     <script>
       function initMap() {
-        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %> };
+        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
@@ -45,9 +39,15 @@
       }
     </script>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ1Y5OlmKtsbNW_OY6zf3xpxgTXgRtMxU&callback=initMap">
-    </script>
+    <script async defer src="https://maps.googleapis.com/maps/apijs?key=AIzaSyARiezVR2lQ-UrD1d00e58KHsu91UmxGVw&callback=initMap"></script>
+
+    <div class="description">
+      <p><%= @place.description %></p><br/>
+        <% if @place.user.present? %>
+          <div class='email'>
+          <email><%= @place.user.email %></email>
+        <% end %>
+    </div>
 
 
   <div class="pull-right">
