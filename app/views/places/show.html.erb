@@ -141,16 +141,14 @@
         <% end %>
     </div>
 
-      <br />
-      <br />
-
     <br />
     <div class="clear"></div>
-
         <!-- Button trigger modal -->
     <button class="btn btn-sharp-leave" data-toggle="modal" data-target="#myModal">
       Leave a Comment
     </button>
+
+    <div class="clear"?></div>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -181,12 +179,12 @@
   <br />
   <br />
 
-  <div class="comment-footer">
-  <h3>Comments</h3>
-
+  <div class="comment-footer"> <h3>Comments</h3></div>
+  <hr class="line"/>
+  <br />
   <br />
     <% @place.comments.each do |comment| %>
-      <div class="show-comment">
+      <div class="col-xs-12 col-sm-6">
       <blockquote>
         <% if comment.humanized_rating.present? %>
           <b><%= comment.humanized_rating %></b> - 
