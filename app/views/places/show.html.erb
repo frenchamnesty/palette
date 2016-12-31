@@ -114,13 +114,34 @@
 
   <br />
 
+  <h3>Reviews</h3>
+
+  <br />
+
     <div class="description">
       <p><%= @place.description %></p><br/>
         <% if @place.user.present? %>
             <div class='email'>
+            <span style="font-weight:bold">comment by: </span>
             <email><%= @place.user.email %></email>
             </div>
         <% end %>
+    </div>
+
+    <br />
+    <div class="clear"></div>
+
+    <h3> Leave a Comment </h3>
+    <br />
+    <div class="comment-section" class="form-style">
+    <%= simple_form_for @comment, url: '#' do |f| %>
+        <div class="comment-message">
+            <%= f.input :message %>
+            <%= f.input :rating %>
+        </div>
+      <br />
+      <%= f.submit "Comment", class: 'btn btn-sharp' %>
+    <% end %>
     </div>
 
 

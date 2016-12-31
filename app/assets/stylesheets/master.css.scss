@@ -64,6 +64,7 @@ h1 {
   margin: 0;
   text-align: left;
   padding: 5px;
+  font-size: 50px;
 }
 
 h2 {
@@ -83,6 +84,7 @@ h5, p, .email {
   font-family: 'Amiri', serif;
   margin: 0;
   padding: 5px;
+  font-size: 15px;
 }
 
 body {
@@ -252,6 +254,18 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+textarea {
+  resize: none;
+  position: relative;
+  width: 60%;
+}
+
+.comment-message {
+  margin: 0;
+  padding-left: 5px;
+}
+
 
 
 
