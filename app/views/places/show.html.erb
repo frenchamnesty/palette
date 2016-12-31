@@ -121,9 +121,19 @@
 
     <div class="description">
       <p><%= @place.description %></p><br/>
-        <% if @place.user.present? %>
+    </div>
+
+ <div class="pull-right">
+         <% if current_user && current_user == @place.user %>
+        <%= link_to 'Edit', edit_place_path(@place) %>
+        <%end%>
+  </div>
+  <br />
+
+    <div class="pull-right">
+      <% if @place.user.present? %>
             <div class='email'>
-            <span style="font-weight:bold">by: </span>
+            <span style="font-weight:bold"></span>
 
             <span style="font-weight:bold"> - </span>
             <email><%= @place.user.email %></email>
@@ -131,36 +141,50 @@
         <% end %>
     </div>
 
-    <div class="pull-right">
-      <% if current_user && current_user == @place.user %>
-        <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-sharp'%>
-      <%end%>
-    </div>
+      <br />
+      <br />
 
     <br />
     <div class="clear"></div>
 
-    <div class="comment-title"><h3> Leave a Comment </h3></div>
-    <br />
-    <br />
+        <!-- Button trigger modal -->
+    <button class="btn btn-sharp-leave" data-toggle="modal" data-target="#myModal">
+      Leave a Comment
+    </button>
 
-  <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-    <div class="comment-section" class="form-style">
-        <div class="comment-message">
-            <%= f.input :message %>
-            <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Add a comment:</h4>
+          </div>
+              <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+                <div class="modal-body">
+            <div class="comment-section" class="form-style">
+            <div class="comment-message">
+              <%= f.input :message %>
+              <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button>
+             <%= f.submit 'Comment', class: 'btn btn-sharp' %>
+          </div>
       <br />
-      <div class="clear"></div>
     </div>
-
-   <%= f.submit 'Comment', class: 'btn btn-sharp' %>
-
-
   <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <br />
+  <br />
 
-    <br />
+  <div class="comment-footer">
+  <h3>Comments</h3>
 
+  <br />
     <% @place.comments.each do |comment| %>
       <div class="show-comment">
       <blockquote>
@@ -172,6 +196,7 @@
       </blockquote>
       </div>
     <% end %> 
+    </div>
 
 </div>
 

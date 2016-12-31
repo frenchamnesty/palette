@@ -155,6 +155,7 @@ body {
 
 }
 
+
 .form-style {
   font-family: 'Amiri', serif;
   margin: 0;
@@ -275,6 +276,29 @@ textarea {
   font-family: "Amiri", serif;
 }
 
+.btn-sharp-leave {
+  border-radius: 0;
+  font-weight: 600;
+  font-style: bold;
+  font-family: "Amatica SC", cursive;
+  font-size: 25px;
+  position: relative;
+  width: 175px;
+}
 
+.modal-title {
+  font-size: 25px;
+  font-family: "Amatica SC", cursive;
 
+}
+
+.pull-right {
+  margin-right: 0;
+  text-align: right;
+  font-family: "Amiri", serif;
+}
+
+.comment-footer {
+  text-align: left;
+}
 
