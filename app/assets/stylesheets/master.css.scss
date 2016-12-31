@@ -242,16 +242,14 @@ abbr[title="required"] {
   display: none;
 }
 
-#map {
-  height: 250px;
-}
 
 /* Optional: Makes the sample page fill the window. */
 
-html, body {
+html, body, #map-canvas {
   height: 225%;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 

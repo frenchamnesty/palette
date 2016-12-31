@@ -8,27 +8,38 @@
 
   <% if @place.latitude.present? && @place.longitude.present? %>
 
+    <div style="height:300px; width: 300px; position: absolute"> 
     <script>
       function initMap() {
-        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+        var myLatLng = {
+            lat: <%= @place.latitude %>, 
+            lng: <%= @place.longitude %>
+          };
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: myLatLng
-        });
+          var mapOptions = {
+            center: myLatLng,
+            zoom: 12,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+          };
+
+        var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'Hello World!'
+          title: @place.name 
         });
       }
+      
     </script>
 
     <script async defer src="https://maps.googleapis.com/maps/apijs?key=AIzaSyARiezVR2lQ-UrD1d00e58KHsu91UmxGVw&callback=initMap"></script>
 
-    <div id="map"></div>
+    <div id="map_canvas"></div>
+    </div>
+
   <% end %>
+
 
   <br />
 
