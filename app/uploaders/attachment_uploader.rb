@@ -13,15 +13,14 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
 storage :file
 
-uploader = AttachmentUploader.new
-uploader.store!(place_id)
-uploader.retrieve_from_store!('place_id.png')
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      #nil
+   "#{Rails.root}/private/files/#{model.id}"
+    #uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
    end
 
 

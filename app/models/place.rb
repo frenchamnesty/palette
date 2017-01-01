@@ -1,5 +1,7 @@
 class Place < ActiveRecord::Base
   belongs_to :user
+  mount_uploaders :attachment, AttachmentUploader #attachment tells rails to use this uploader
+
   has_many :comments
   has_many :images
   

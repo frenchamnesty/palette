@@ -3,34 +3,31 @@
  <div class="simple-form">
   <h1>Enter Your Place Details</h1>
     <div class="form-style" class="field">
-    <%= simple_form_for @place do |f| %>
-      <%= f.input :name, :input_html => { :class => 'input' } %>
-      <br />
-      <%= f.input :address, :input_html => { :class => 'input' } %>
-      <br />
-      <%= f.input :description, :input_html => { :class => 'input-description' } %>
-      <br />
-        <div class="modal-footer">
+        <%= simple_form_for @place do |f| %>
+          <%= f.input :name, :input_html => { :class => 'input' } %>
         <br />
-            <div class="clear"></div>
-            <br/>
-              <%= f.submit 'Submit', class: 'btn btn-sharp' %>
-              <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button><end%>
-        </div>
-      <%end%>
-      </div>
-      <div class="simple-form">
-      <%= image_tag form_for place_images_path(@place) do |f| %>
-        <p>
-          <label>Upload Photo</label>
-          <div class="form-style" class="field">
-          <%= f.file_field :image %>
-          <%= f.input :caption %>
-          </p>
-        <%end%>
-      </div>
-      <br />
-      <br />
-      </div>
-  </div>
+          <%= f.input :address, :input_html => { :class => 'input' } %>
+        <br />
+          <%= f.input :description, :input_html => { :class => 'input-description' } %>
+        <br />
+    </div>
+      
+    <div class="modal-footer">
 
+          <div class="clear"></div>
+
+    <div class="image-upload">
+        <%= form_for @image, url: places_images_path(@place) do |f| %>
+          <p>
+        <label>Upload Photo</label>
+            <%= f.file_field :attachment %>
+            <%= f.text_field :caption %>
+                <%= f.submit 'Submit', class: 'btn btn-sharp' %>
+                  <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button>
+                <%end%>
+        <%end%>
+          </p>
+    </div>
+
+  </div>
+  </div>
