@@ -9,7 +9,14 @@
       <br />
       <%= f.input :description, :input_html => { :class => 'input-description' } %>
       <br />
-      <img><%= f.input :images %></img>
+      <p>
+      <div class="photo-form">
+      <%= form_for @place, html: {multipart: true} do |f| %>
+      <label>Upload Photo</label>
+      <%= f.file_field :image %>
+      </p>
+      <%end%>
+      </div>
       <br />
       <br />
       <%= f.submit 'Create', class: 'btn btn-sharp' %>
