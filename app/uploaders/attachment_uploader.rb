@@ -12,6 +12,10 @@ class AttachmentUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
 storage :file
+
+uploader = AttachmentUploader.new
+uploader.store!(place_id)
+uploader.retrieve_from_store!('place_id.png')
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
