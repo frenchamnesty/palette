@@ -9,10 +9,14 @@
       <br />
       <%= f.input :description, :input_html => { :class => 'input-description' } %>
       <br />
-      <%= link_to image_create(@place) => { :class => 'input-image'}
+        <div class="photo-button"><button class="btn btn-sharp-upload" data-toggle="modal" data-target="#myModal">
+            <%= link_to "Upload Photo", place_images_url(@place) %>
+            </div>
       <br />
       <%= f.submit 'Create', class: 'btn btn-sharp' %>
     <% end %>
     </div>
 </div>
 
+
+ 

@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'image/index'
 
-  get 'image/new'
-
-  get 'image/create'
-
-  get 'image/destroy'
 
   devise_for :users
   root 'places#index'
@@ -14,6 +8,8 @@ Rails.application.routes.draw do
     resources :comments, only: :create 
     resources :images, only: :create
   end 
+
+  resources :users, only: :show 
 
 
 
