@@ -12,6 +12,10 @@ gem "figaro", ">= 1.0.0"
 
 gem 'simple_form'
 
+group :development do 
+  gem 'better_errors'
+end 
+
 gem 'carrierwave'
 
 gem 'devise', '>= 3.2.4'

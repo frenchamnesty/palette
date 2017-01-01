@@ -9,20 +9,25 @@
       <br />
       <%= f.input :description, :input_html => { :class => 'input-description' } %>
       <br />
-      <p>
-      <div class="photo-form">
-      <%= form_for @place, html: {multipart: true} do |f| %>
-      <label>Upload Photo</label>
-      <%= f.file_field :image %>
-      </p>
+        <div class="modal-footer">
+        <br />
+            <div class="clear"></div>
+            <br/>
+              <%= f.submit 'Submit', class: 'btn btn-sharp' %>
+              <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button><end%>
+        </div>
       <%end%>
+      </div>
+      <div class="photo-form">
+      <%= simple_form_for @image, url_for(:action => 'create', :controller => 'images'), :method => 'post' do |f| %>
+        <p>
+          <label>Upload Photo</label>
+          <%= f.file_field :image %>
+          <%= f.input :caption %>
+        </p>
+        <%end%>
       </div>
       <br />
       <br />
-      <%= f.submit 'Create', class: 'btn btn-sharp' %>
-    <% end %>
-    </div>
-</div>
+  </div>
 
-
- 
