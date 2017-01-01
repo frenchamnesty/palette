@@ -4,7 +4,14 @@ class CreateImages < ActiveRecord::Migration
       t.text :caption
       t.string :attachment
 
+      t.integer :user_id
+      t.integer :place_id
+
       t.timestamps null: false
-    end
   end
+
+  add_index :images, [:user_id, :place_id]
+  add_index :images, :place_id
+
+
 end

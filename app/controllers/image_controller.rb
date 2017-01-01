@@ -1,5 +1,7 @@
 class ImageController < ApplicationController
 
+  before_action :authenticate_user! 
+
   def index
     @images = Image.all
   end
@@ -10,25 +12,14 @@ class ImageController < ApplicationController
 
 
   def create
-    @place = Place.find(params[:place_id])
-    @place.images.create(image_params.merge(user: current_user))
-    if @image.save
-      redirect_to place_path(@place), notice: "Your image #{@image.name} has been uploaded!"
-    else 
-      render "new"
-    end
+    @image.create(image_params.merge(user: current_user))
+    redirect_to place_path(@place)
   end 
-
-  def destroy
-    @image = Image.find(params[:id])
-    @image.destroy
-    redirect_to place_images_path, notice: "Image has been deleted."
-  end
 
   private
 
     def image_params
-      params.require(:image).permit(:caption, :attachment)
+      params.require(:attachment).permit(:caption)
     end 
 
 end

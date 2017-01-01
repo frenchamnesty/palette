@@ -141,6 +141,17 @@
         <% end %>
     </div>
 
+  <br />
+
+  <h3>Photos</h3>
+
+  <br />
+
+      <% @place.images.each do |photo| %>
+      <%= image_tag image.attachment %>
+      <%= image.caption %>
+      <% end %>
+
     <br />
     <div class="clear"></div>
         <!-- Button trigger modal -->
@@ -171,7 +182,7 @@
         <div class="modal-footer">
         <br />
             <div class="photo-button"><button class="btn btn-sharp-upload" data-toggle="modal" data-target="#myModal">
-            <%= link_to "Upload Photo", image_new_path(@place) %>
+            <%= link_to "Upload Photo", image_create_path(@place) %>
             </div>
             <div class="clear"></div>
             <br/>

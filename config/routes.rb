@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :places do 
     resources :comments, only: :create 
-    resources :images, only: [:index, :new, :create, :destroy]
+    resources :images, only: :create
   end 
 
 

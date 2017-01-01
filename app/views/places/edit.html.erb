@@ -9,7 +9,7 @@
       <br />
       <%= f.input :description, :input_html => { :class => 'input-description' } %>
       <br />
-      <%= f.input :image, :input_html => { :class => 'input-caption' } %>
+      <%= link_to image_create(@place) => 'input-upload' %>
       <br />
       <%= f.submit 'Update', class: 'btn btn-sharp' %>
     <% end %>
