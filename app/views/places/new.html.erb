@@ -9,7 +9,32 @@
       <br />
       <%= f.input :description, :input_html => { :class => 'input-description' } %>
       <br />
+      <div class="photo-form">
+      <%= f.input :image, :input_html => { :class => 'input-image'} %>
+          <% if !@image.errors.empty? %>
+             <div class = "alert alert-error">
+                
+                <ul>
+                   <% @image.errors.full_messages.each do |msg| %>
+                      <li><%= No attachment %></li>
+                   <% end %>
+                </ul>
+                
+             </div>
+          <% end %>
+
+          <div class = "well">
+             <%= form_for @image, html: { multipart: true } do |f| %>
+                <%= f.text_field :caption %>
+                <%= f.label :attachment %>
+                <%= f.file_field :attachment %>
+                <%= f.submit "Upload", class: "btn btn-sharp" %>
+             <% end %>
+          </div>
+      </div>
+      <br />
       <%= f.submit 'Create', class: 'btn btn-sharp' %>
     <% end %>
     </div>
 </div>
+

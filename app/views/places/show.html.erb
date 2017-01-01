@@ -158,21 +158,33 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             <h4 class="modal-title" id="myModalLabel">Add a comment:</h4>
           </div>
-              <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-                <div class="modal-body">
-            <div class="comment-section" class="form-style">
-            <div class="comment-message">
+
+
+    <div class="simple-form">
+      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+        <div class="modal-body">
+        <div class="comment-section" class="form-style">
+        <div class="comment-message">
               <%= f.input :message %>
               <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button>
-             <%= f.submit 'Comment', class: 'btn btn-sharp' %>
-          </div>
-      <br />
+        </div>
+        <div class="modal-footer">
+                <div class="photo-button"><button class="btn btn-sharp-leave" data-toggle="modal" data-target="#myModal">
+                    Upload a Photo
+        </div>
+        <%= link_to "Upload Photo", image_new_path, class: 'btn btn-sharp' %>
+            <div class="clear"></div>
+        <%= f.submit 'Submit', class: 'btn btn-sharp' %>
+      <%end%>
+        </div>
+
+        </div>
+        </div>
+
     </div>
-  <% end %>
-          </div>
+
+    <div class="clear"></div>
+  
         </div>
       </div>
     </div>

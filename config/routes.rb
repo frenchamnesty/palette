@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
+  get 'image/index'
+
+  get 'image/new'
+
+  get 'image/create'
+
+  get 'image/destroy'
+
   devise_for :users
   root 'places#index'
 
   resources :places do 
     resources :comments, only: :create 
+    resources :images, only: [:index, :new, :create, :destroy]
   end 
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
