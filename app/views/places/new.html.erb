@@ -1,7 +1,7 @@
 
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1>Enter Your Place Details</h1>
-    <div class="form-style">
+    <div class="form-style" class="field">
     <%= simple_form_for @place do |f| %>
       <%= f.input :name, :input_html => { :class => 'input' } %>
       <br />
@@ -9,9 +9,8 @@
       <br />
       <%= f.input :description, :input_html => { :class => 'input-description' } %>
       <br />
-        <div class="photo-button"><button class="btn btn-sharp-upload" data-toggle="modal" data-target="#myModal">
-            <%= link_to "Upload Photo", place_images_url(@place) %>
-            </div>
+      <img><%= f.input :images %></img>
+      <br />
       <br />
       <%= f.submit 'Create', class: 'btn btn-sharp' %>
     <% end %>
