@@ -169,12 +169,14 @@
               <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
         </div>
         <div class="modal-footer">
-                <div class="photo-button"><button class="btn btn-sharp-leave" data-toggle="modal" data-target="#myModal">
-                    Upload a Photo
-        </div>
-        <%= link_to "Upload Photo", image_new_path, class: 'btn btn-sharp' %>
+        <br />
+            <div class="photo-button"><button class="btn btn-sharp-upload" data-toggle="modal" data-target="#myModal">
+            <%= link_to "Upload Photo", image_new_path(@place) %>
+            </div>
             <div class="clear"></div>
+            <br/>
         <%= f.submit 'Submit', class: 'btn btn-sharp' %>
+        <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button>
       <%end%>
         </div>
 

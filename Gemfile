@@ -12,6 +12,8 @@ gem "figaro", ">= 1.0.0"
 
 gem 'simple_form'
 
+github: 'carrierwaveuploader/carrierwave'
+
 gem 'carrierwave'
 
 gem 'devise', '>= 3.2.4'
