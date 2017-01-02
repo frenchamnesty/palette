@@ -6,6 +6,30 @@
   <h5><%= @place.address %></h5><br/>
 
   <% if @place.latitude.present? && @place.longitude.present? %>
+  <br />
+  <br />
+
+  <div class="text-area-description">
+  <h3>About</h3>
+      <br />
+      <div class="description">
+      <p><%= @place.description %></p><br/>
+      </div>
+  </div>
+
+  <h3>Photos</h3>
+
+  <br />
+
+     <% @place.images.each do |photo| %>
+   <div class="col-xs-12 col-sm-6">
+     <blockquote>
+       <img><%= img_tag image.attachment %></img>
+       <%= image.caption %>
+     </blockquote>
+   </div>
+  <% end %>
+
 
     <div id="map"></div>
     <script>
@@ -115,14 +139,6 @@
 
   <br />
 
-  <h3>About</h3>
-
-  <br />
-
-    <div class="description">
-      <p><%= @place.description %></p><br/>
-    </div>
-
  <div class="pull-right">
          <% if current_user && current_user == @place.user %>
         <%= link_to 'Edit', edit_place_path(@place) %>
@@ -143,16 +159,10 @@
 
   <br />
 
-  <h3>Photos</h3>
-
-  <br />
-
-      <% @place.images.each do |photo| %>
-      <%= image_tag image.attachment %>
-      <%= image.caption %>
-      <% end %>
-
-    <br />
+          <div div="class"></div>
+          <br/>
+          <br />
+          <br />
     <div class="clear"></div>
         <!-- Button trigger modal -->
     <button class="btn btn-sharp-leave" data-toggle="modal" data-target="#myModal">
@@ -192,6 +202,10 @@
         </div>
 
     </div>
+
+
+
+
 
     <div class="clear"></div>
   

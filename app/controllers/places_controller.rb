@@ -1,6 +1,5 @@
 class PlacesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :configure_permitted_paramters, if: :devise_controller?
 
   def index
     @places = Place.paginate(:page => params[:page], :per_page => 10)
@@ -45,7 +44,6 @@ class PlacesController < ApplicationController
     else 
       render :edit, status: :unprocessable_entity
     end 
-    
   end 
 
   def destroy
@@ -61,10 +59,6 @@ class PlacesController < ApplicationController
 
   def place_params
     params.require(:place).permit(:name, :description, :address)
-  end 
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :profile_photo
   end 
 
 end

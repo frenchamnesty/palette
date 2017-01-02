@@ -5,5 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :places
   has_many :comments 
-  has_many :images 
+
+  def show 
+    @user = User.find(params[:id])
+  end 
+
 end
