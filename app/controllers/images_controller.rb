@@ -1,11 +1,11 @@
-class ImageController < ApplicationController
+class ImagesController < ApplicationController
 
   before_action :authenticate_user! 
 
   def create
-    @place = Place.find(params[:id])
+    @place = Place.find(params[:place_id])
     #@place.images.create(params[:image_params, :id])
-    @place.images.create(image_params(image: current_image)
+    @place.images.create(image_params)
     redirect_to place_path(@place)
   end 
 

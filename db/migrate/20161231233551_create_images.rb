@@ -14,4 +14,5 @@ class CreateImages < ActiveRecord::Migration
   add_index :images, :place_id
 
 
+  end
 end

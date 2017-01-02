@@ -10,27 +10,12 @@
         <br />
           <%= f.input :description, :input_html => { :class => 'input-description' } %>
         <br />
+<%= f.submit %>
       <%end%>
     </div>
       
     <div class="clear"></div>
 
-<!-- Photo Uploader -->
-
-     <div class="image-upload">
-        <%= simple_form_for @image, url: place_images_path(@place) do |f| %>
-          <p>
-          <div class="simple-form" class="form-style">
-          <label>Upload Photo</label>
-            <%= f.file_field :attachment, class: 'btn btn-sharp-photos' %>
-            <%= f.input :caption %>
-                <%= f.submit 'Upload', class: 'btn btn-sharp-photos' %>
-          <%end%>
-          </div>
-          </p>
-
-    </div>
-    </div>
   
 </div>
 

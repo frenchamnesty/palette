@@ -18,7 +18,7 @@ group :development do
   gem 'better_errors'
 end 
 
-gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave'
 
 gem 'devise', '>= 3.2.4'
 
