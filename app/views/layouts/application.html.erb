@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Palette</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+  <%= favicon_link_tag 'favicon.ico' %>
+
+
+<div class="search">
+<% form_tag request.path, :method => 'get' do %>
+  <% content_tag :label do %>
+    Search term:
+    <%= text_field_tag :search, params[:search] %>
+  <% end %>
+<% end %>
+</div>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="margin-bottom:0">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="site-header">
+      <a class="navbar-brand" href="/">Palette</a>
+      <% link_to root_path %>
+      </div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to new_place_path do %>
+          New Place
+          <i style="font-size:0.75em;" class="glyphicon glyphicon-plus-sign"></i>
+          <% end %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">About</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'My Profile', user_path(current_user)%></li>
+          <li><%= link_to 'sign out', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'sign in', new_user_session_path %></li>
+          <li><%= link_to 'sign up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<% if notice.present? %>
+  <p class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+<%= yield %>
+
+<div class="clear"></div>
+
+
+<div class="col-xs-12 footer">
+
+      <h3>CONTACT</h3>
+      <hr class="line"/>
+      <br />
+      Developed by <a href="http://kathleen-french.getforge.io">Kathleen French</a>
+      <br />
+      Email - <a href="mailto:kfrench09@gmail.com" target="_blank">here</a>
+
+</div>
+
+
+
+</body>
+</html>

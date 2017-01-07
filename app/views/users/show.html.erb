@@ -1,0 +1,52 @@
+<div class="booyah-box">
+  <div class="col-xs-4">
+    <%= image_tag 'user.png', {style:"width:90%;height:auto"} %>
+    <!--creates an 20x20 pixel-->
+    <img><%= gravatar_tag @user.email, :size => 20 %></img>
+  </div>
+
+<div class="col-xs-8">
+        <p>user e-mail: <%= @user.email %></p>
+        <p>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></p>
+        <p><%= @user.comments.count %> total comments </p>
+        <p><%= @user.comments.where(rating:'5_stars').count %> total 5 star reviews </p>
+</div>
+
+<div class="clear"></div>
+<br /><br />
+
+<!-- my comments -->
+
+<h2 class="text-center">My Comments</h2>
+<br /><br />
+<% @user.comments.each do |comment| %>
+
+  <div class="col-xs-12 col-sm-6">
+    <h3><%= link_to comment.place.name, place_path(comment.place), {style:"text-decoration:none;color:black;hover:underline"} %></h3><br/>
+    <blockquote>
+      <% if comment.humanized_rating.present? %>
+        <b><%= comment.humanized_rating %></b> -
+      <% end %>
+      <%= comment.message %>
+      <small><%= comment.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
+<br/>
+
+<div class="clear"></div>
+
+<!-- my places -->
+
+<div class="my-places">
+<h2 class="text-center"> My Places </h2>
+<br/>
+  <% @user.places.each do |place| %>
+      <h3><%= link_to place.name, place_path(place), {style:"text-decoration:none;color:black;hover:underline"} %></h3>
+      <br/>
+      <i><%= place.address %></i>
+      <br/>
+      <p><%= place.description %></p><br />
+  <% end %>
+</div>
+</div>

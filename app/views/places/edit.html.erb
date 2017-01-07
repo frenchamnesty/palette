@@ -1,0 +1,21 @@
+
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1>Edit Entry</h1>
+    <div class="form-style">
+    <%= simple_form_for @place do |f| %>
+      <%= f.input :name, :input_html => { :class => 'input' } %>
+      <br />
+      <%= f.input :address, :input_html => { :class => 'input' } %>
+      <br />
+      <%= f.input :description, :input_html => { :class => 'input-description' } %>
+      <br />
+      <%= f.submit 'Update', class: 'btn btn-sharp' %>
+    <% end %>
+     <div class="pull-right">
+            <br />
+            <% if current_user && current_user == @place.user %>
+            <%= link_to 'Remove', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-sharp'%>
+            <%end%>
+            </div>
+    </div>
+</div>

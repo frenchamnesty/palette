@@ -1,0 +1,458 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(https://fonts.googleapis.com/css?family=Seaweed+Script|Amatica+SC);
+@import url('https://fonts.googleapis.com/css?family=Amiri');
+
+/*font-family: "Amatica SC", cursive;*/
+
+.clear { clear:both; display:block; overflow:hidden; visibility:hidden; height:0px;}
+
+
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 3px 3px 3px 0 #d0d0d0;
+  background: #fff;
+  border: 1px dashed #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
+  box-sizing:border-box;
+  margin-top: relative;
+
+}
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        text-align: right;
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+
+
+h1 {
+  font-family: "Amatica SC", cursive;
+  margin: 0;
+  text-align: left;
+  padding: 5px;
+  font-size: 70px;
+  color: black
+}
+
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+  font-family: "Amatica SC", cursive;
+
+}
+
+h3 {
+  font-size: 35px;
+}
+
+h3, h4 {
+  margin:0;
+  padding:5px;
+  font-family: "Amatica SC", cursive;
+}
+
+p, .email, .caption {
+  font-family: 'Amiri', serif;
+  margin-left: 5px;
+  padding:5px;
+  font-size: 20px;
+}
+
+h5 {
+  font-family: 'Amiri', serif;
+  margin-left: 5px;
+  padding:5px;
+  font-size: 15px;
+}
+
+h8 {
+  text-align: center;
+  font-family: "Amatica SC", cursive;
+  font-size: 80px;
+  font-color: white;
+  position: absolute;
+  left:0;
+}
+
+body {
+  background:url('/assets/lined_paper.png');
+}
+
+.carousel-caption {
+  font-family: 'Amiri', serif;
+  font-size: 25px;
+  text-align: center;
+  font-color: white;
+  font-weight: 100;
+  width: 100%;
+  position:absolute;
+  left:0;
+}
+
+.palette-header {
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+.carousel {
+  margin:0 auto 60px;
+}
+
+.read-more {
+  font-family: "Amatica SC", cursive;
+  margin:0;
+  padding:5px;
+  font-family: "Amatica SC", cursive;
+  font-size: 35px;
+  text-align: right
+}
+
+.navbar.navbar-inverse {
+  background:url('/assets/pink_rice.png');
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px 3px 2px #cccccc;
+
+}
+
+
+.navbar-inverse .navbar-brand {
+  color: #000000;
+  font-family: "Amatica SC", cursive;
+  font-weight: 500;
+  font-size: 30px;
+  font-style: bold;
+  font-weight: 600;
+  padding-top: 12px;
+}
+
+.navbar .nav > li > a {
+    float: none;
+    line-height: 19px;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color: #000000;
+    font-family: "Amatica SC", cursive;
+    font-size: 20px;
+}
+
+.footer {
+  text-align: center;
+  font-family: 'Amiri', serif;
+  background: url('/assets/pink_rice.png');
+  border: 1px solid #e5e5e5;
+  position: relative;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 10px;
+  padding-top: 5px;
+
+}
+
+.pagination {
+  text-align: center;
+  width: 100%;
+  font-family: "Amatica SC", cursive;
+  font-size: 23px;
+}
+
+.line {
+  background-color: #000000;
+  height: 1px;
+  border: none;
+  width: 80px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+
+}
+
+
+.form-style {
+  font-family: 'Amiri', serif;
+  margin: 0;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-sharp {
+  border-radius: 0;
+  font-weight: 600;
+  font-style: bold;
+  font-family: "Amatica SC", cursive;
+  font-size: 25px;
+  position: relative;
+  width: 100px;
+}
+
+.btn-sharp-upload {
+  border-radius: 0;
+  font-weight: 600;
+  font-style: bold;
+  font-family: "Amatica SC", cursive;
+  font-size: 25px;
+  float: right;
+  width: 130px;
+  text-align: center;
+}
+
+.btn-sharp-gallery {
+  border-radius: 0;
+  font-weight: 600;
+  font-style: bold;
+  font-family: "Amatica SC", cursive;
+  font-size: 25px;
+  width: 130px;
+  text-align: center;
+  float: right;
+  display: block;
+}
+
+.btn-sharp-forgot {
+  border-radius: 0;
+  font-weight: 600;
+  font-style: bold;
+  font-family: "Amatica SC", cursive;
+  font-size: 25px;
+  position: relative;
+  width: 350px
+}
+
+.login-page, .signup-page {
+  text-align: center;
+}
+
+.render {
+  font-family: 'Amiri', serif;
+  font-style: bold;
+  padding-top: 4px;
+}
+
+.field-set {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.form-inputs{
+    font-family: 'Amiri', serif;
+}
+
+.input-description {
+    overflow: hidden;
+    width: 60%;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Amiri", serif;
+}
+
+input {
+  width: 60%;
+  overflow:hidden;
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Amiri',serif
+}
+
+label {
+  float: left;
+  width: 20%;
+  box-sizing: border-box;
+  font-family: 'Amiri',serif;
+  text-align:left;
+  font-size:16px
+}
+
+.hint {
+  box-sizing: border-box;
+  float:left;
+  padding-left: 50%;
+  padding-top: 4px;
+  position: relative;
+}
+
+.field_with_errors {
+  border-radius: 3px;
+  padding: 8px;
+  background-color: #FFEEEE;
+  color: #ff3333;
+  position: relative;
+}
+
+abbr[title="required"] {
+  display: none;
+}
+
+
+#map {
+  height: 300px;
+}
+      /* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+  position: relative;
+  width: 60%;
+}
+
+.comment-message {
+  margin: 0;
+  padding-left: 5px;
+}
+
+
+.show-comment {
+  font-family: "Amiri", serif;
+}
+
+.btn-sharp-leave {
+  border-radius: 0;
+  font-weight: 600;
+  font-style: bold;
+  font-family: "Amatica SC", cursive;
+  font-size: 25px;
+  float: right;
+  width: 175px;
+}
+
+.modal-title {
+  font-size: 25px;
+  font-family: "Amatica SC", cursive;
+
+}
+
+.pull-right {
+  margin-right: 0;
+  text-align: right;
+  font-family: "Amiri", serif;
+}
+
+.comment-footer {
+  text-align: center;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-family: "Amiri", serif;
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+  font-family: "Amiri", serif;
+
+}
+blockquote p {
+  font-family: "Amiri", serif;
+  display: inline;
+}
+
+.comment-show {
+  font-family: "Amiri", serif;
+}
+
+.slider-size {
+    height: 400px; /* This is your slider height */
+}
+
+.image-tag {
+  height: 40px;
+  width: 100%;
+  padding: 3px;
+  height: auto;
+  float: center;
+}
+
+
+.modal-dialog-gallery, .modal-fade-gallery {
+  width: 100%;
+  float: center;
+}
+
+.container{
+    width: 400px;
+    background: none;
+    .floated{
+        float: right;
+        width: 30%;
+        background: none
+    }
+}
+
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    line-height: 1;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: block;
+    margin-bottom: 0;
+    overflow: hidden;
+    margin-top: -23%;
+    margin-bottom: 0;
+}
+
+
+.c-wrapper{
+    min-width: 100%; /* for example */
+    margin: auto;
+    max-height: 550px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.carousel-indicators {
+  margin-bottom: 2%;
+}

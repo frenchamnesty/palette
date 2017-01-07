@@ -1,0 +1,25 @@
+
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+ <div class="simple-form">
+  <h1>Enter Your Place Details</h1>
+    <br />
+    <div class="form-style" class="field">
+        <%= simple_form_for @place do |f| %>
+          <%= f.input :name, :input_html => { :class => 'input' } %>
+        <br />
+          <%= f.input :address, :input_html => { :class => 'input' } %>
+        <br />
+          <%= f.input :description, :input_html => { :class => 'input-description' } %>
+        <br />
+      <%= f.submit :class => 'btn btn-sharp-upload' %>
+      <br />
+      <br />
+      <%end%>
+      <br />
+      <br />
+    </div>
+  </div>
+
+
+
+<!-- Photo Uploader -->

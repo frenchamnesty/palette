@@ -1,0 +1,345 @@
+
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+
+
+  <h1><%= @place.name %></h1>
+<i><h5><%= @place.address %></h5><br/></i>
+
+  <% if @place.latitude.present? && @place.longitude.present? %>
+      <div style="width:100%;">
+          <div style="float:none; background:none;"> <br/>
+          <div class="text-area-description">
+            <h3>About</h3>
+            <br />
+            <div class="description">
+            <p><%= @place.description %></p><br/>
+          </div>
+          </div>
+
+          <div id="container" style="float:right;width:50%;margin-top: -70px;margin-right:-20px; background:none;">
+            <div class="booyah-box col-xs-10 col-xs-offset-1">
+            <% if @place.images.last %>
+              <%= image_tag @place.images.last.attachment, class: 'image-tag' %>
+                  <br />
+                  <br />
+              <div class="caption">
+                <%= @place.images.last.caption %>
+              </div>
+                 <% end %>
+              </div>
+              <div class="clear"></div>
+
+          </div>
+          </div>
+
+      </div>
+
+
+<div class="clear"></div>
+
+<!-- Social Share -->
+
+<div class="social-share"style="text-align:right;margin-right:5px">
+<a class="btn btn-social-icon btn-facebook"href="http://www.facebook.com/sharer.php?u=http://www.pontikis.net"
+	target="_blank">
+  <span class="fa fa-facebook"></span>
+</a>
+<a class="btn btn-social-icon btn-twitter"href="http://twitter.com/share?text=An%20intersting%20blog&url=http://www.pontikis.net"
+	target="_blank">
+  <span class="fa fa-twitter"></span>
+</a>
+<a class="btn btn-social-icon btn-google"href="https://plus.google.com/share?url=http://www.pontikis.net"
+	target="_blank">
+  <span class="fa fa-gooogle"></span>
+</a>
+</div>
+
+<!-- Button trigger Gallery Modal -->
+
+<br />
+<button class="btn btn-sharp-gallery"style="margin-right:5px" data-toggle="modal" data-target="#myModalGallery">
+  See Gallery
+</button>
+<div class="clear"></div>
+
+
+<!-- Gallery Modal -->
+
+    <div class="modal fade-gallery" id="myModalGallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog-gallery">
+        <div class="modal-content">
+          <div class="modal-header">
+
+   <h2> Gallery </h2>
+    <% @place.images.in_groups_of(3) do |group| %>
+    <div class="row">
+      <% group.compact.each do |image| %>
+        <div class="col-xs-4">
+          <%= image_tag image.attachment, :width => '100%' if image.attachment.present? %>
+          <h4><% link_to image.caption, image %></h4>
+          <%= image.caption %>
+          </div>
+        <%end%>
+        </div>
+        <%end%>
+        <div class="clear"></div>
+        <br />
+        <br />
+            <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button>
+  <!-- Button trigger Add Photo -->
+              <button class="btn btn-sharp-upload" data-toggle="modal" data-target="#myModalImage">
+              Add a Photo
+            </button>
+          </div>
+
+    <!-- New Photo Modal -->
+  <div class="clear"?></div>
+    <div class="modal fade" id="myModalImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Add a Photo:</h4>
+          </div>
+
+  <!-- PHOTO UPLOAD -->
+
+      <div class="simple-form">
+      <%= simple_form_for @image, url: place_images_path(@place) do |f| %>
+        <div class="modal-body">
+        <div class="image-section" class="form-style">
+        <div class="image-message">
+              <%= f.input :caption %>
+              <%= f.input :attachment %>
+        </div>
+            <div class="modal-footer">
+                <br />
+            <div class="clear"></div>
+            <br/>
+                <button type="button" class="btn btn-sharp" data-dismiss="modal">Close</button>
+                <%= f.submit 'Submit', class: 'btn btn-sharp' %>
+                <%end%>
+            </div>
+        </div>
+        </div>
+        </div>
+            <br />
+            <br/>
+      </div>
+    </div>
+  <br />
+  <br />
+
+<!-- -->
+
+            </div>
+            <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  <br />
+  <br />
+
+
+<!-- Map -->
+
+    <div id="map">
+    <script>
+      function initMap() {
+        // Styles a map in night mode.
+        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatLng,
+          zoom: 15,
+          scrollwheel: false,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+        });
+
+        var marker = new google.maps.Marker ({
+          position: myLatLng,
+          map: map,
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARiezVR2lQ-UrD1d00e58KHsu91UmxGVw&callback=initMap"
+    async defer></script>
+  <% end %>
+</div>
+
+  <br />
+
+<div class="clear"></div>
+
+  <!-- Edit, Email -->
+  <br />
+ <div class="pull-right">
+    <% if current_user && current_user == @place.user %>
+    <%= link_to 'Edit', edit_place_path(@place) %>
+    <%end%>
+  <br />
+  <% if @place.user.present? %>
+      <email><%= @place.user.email %></email>
+  <% end %>
+
+  </div>
+
+  <div class="clear"></div>
+
+  <br />
+  <!-- Button trigger modal comments-->
+    <button class="btn btn-sharp-leave" data-toggle="modal" data-target="#myModalComment">
+      Leave a Comment
+    </button>
+
+    <div class="clear"?></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModalComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Add a comment:</h4>
+          </div>
+
+    <!-- Add New Comment -->
+
+    <div class="simple-form">
+
+      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+        <div class="modal-body">
+        <div class="comment-section" class="form-style">
+        <div class="comment-message">
+              <%= f.input :message %>
+              <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
+        </div>
+        <div class="modal-footer-commen">
+        <br />
+            <div class="clear"></div>
+            <div class="btn btn-sharp-upload">
+                <%= f.submit 'Submit', class: 'btn btn-sharp-upload' %>
+                  <%end%>
+                <br /
+                <br />
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+    </div>
+
+<!-- -->
+
+    <div class="clear"></div>
+
+        </div>
+      </div>
+    </div>
+  <br />
+  <br />
+
+
+  <!--  Comment Section -->
+
+  <div class="comment-footer"> <h3>Comments</h3></div>
+  <hr class="line"/>
+  <br />
+  <br />
+
+    <% @place.comments.each do |comment| %>
+      <div class="col-xs-12 col-sm-6">
+      <blockquote>
+        <% if comment.humanized_rating.present? %>
+          <b><%= comment.humanized_rating %></b> -
+          <% end %>
+          <%= comment.message %>
+          <br />
+          <small><%= comment.user.email %></small>
+      </blockquote>
+      </div>
+    <% end %>
+    </div>
+
+
+</div>
